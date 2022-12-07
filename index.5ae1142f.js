@@ -1,0 +1,2 @@
+const o={potions:[{name:"Speed potion",price:460},{name:"Dragon breath",price:780},{name:"Stone skin",price:520}],getPotions(){return this.potions},addPotion(o){const n=[];for(const o of this.potions)n.push(o.name);if(n.includes(o.name))return console.log(`Error! Potion ${o.name} is already in your inventory!`),void console.log(this.potions);this.potions.push(o),console.log(this.potions)}};o.addPotion({name:"Speed potion",price:460}),o.addPotion({name:"plotva",price:460}),o.addPotion({name:"Dragon breath",price:780});
+//# sourceMappingURL=index.5ae1142f.js.map
