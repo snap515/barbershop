@@ -71,8 +71,8 @@ const atTheOldToad = {
 atTheOldToad.addPotion({ name: 'Speed potion', price: 460 });
 atTheOldToad.addPotion({ name: 'plotva', price: 460 });
 atTheOldToad.addPotion({ name: 'Dragon breath', price: 780 });
-atTheOldToad.addPotion({ name: 'zelie', price: 460 });
-atTheOldToad.addPotion({ name: 'Dragon breath', price: 780 });
-atTheOldToad.addPotion({ name: 'Stone skin', price: 520 });
-atTheOldToad.addPotion({ name: 'plotva', price: 460 });
-atTheOldToad.addPotion({ name: 'zelie', price: 460 });
+// atTheOldToad.addPotion({ name: 'zelie', price: 460 });
+// atTheOldToad.addPotion({ name: 'Dragon breath', price: 780 });
+// atTheOldToad.addPotion({ name: 'Stone skin', price: 520 });
+// atTheOldToad.addPotion({ name: 'plotva', price: 460 });
+// atTheOldToad.addPotion({ name: 'zelie', price: 460 });
