@@ -83,13 +83,53 @@
 
 // fnA('hello my friend', fnB);
 
-const doMath = function (a, b, callback) {
-  const result = callback(a, b);
-  console.log(result);
+// const doMath = function (a, b, callback) {
+//   const result = callback(a, b);
+//   console.log(result);
+// };
+
+// const add = function (x, y) {
+//   return x + y;
+// };
+
+// doMath(2, 14, add);
+
+// // Колбэк-функция
+// function greet(name) {
+//   console.log(`Добро пожаловать ${name}.`);
+// }
+
+// // Функция высшего порядка
+// function registerGuest(name, callback) {
+//   console.log(`Регистрируем гостя ${name}.`);
+//   callback(name);
+// }
+
+// registerGuest('Манго', greet);
+
+const pizzaPalace = {
+  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+  order(pizzaName, onSuccess, onError) {
+    if (this.pizzas.includes(pizzaName)) {
+      return makePizza();
+    }
+    return onOrderError();
+  },
+};
+// Change code above this line
+
+// Callback for onSuccess
+const onSuccess = function makePizza(pizzaName) {
+  console.log(`Your order is accepted. Cooking pizza ${pizzaName}.`);
 };
 
-const add = function (x, y) {
-  return x + y;
+// Callback for onError
+const onError = function onOrderError(error) {
+  console.log(`Error! ${error}`);
 };
 
-doMath(2, 14, add);
+// Method calls with callbacks
+pizzaPalace.order('Smoked', makePizza, onOrderError);
+pizzaPalace.order('Four meats', makePizza, onOrderError);
+pizzaPalace.order('Big Mike', makePizza, onOrderError);
+pizzaPalace.order('Vienna', makePizza, onOrderError);
