@@ -107,29 +107,60 @@
 
 // registerGuest('Манго', greet);
 
-const pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-  order(pizzaName, onSuccess, onError) {
-    if (this.pizzas.includes(pizzaName)) {
-      return makePizza();
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (this.pizzas.includes(pizzaName)) {
+//       return makePizza();
+//     }
+//     return onOrderError();
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// const onSuccess = function makePizza(pizzaName) {
+//   console.log(`Your order is accepted. Cooking pizza ${pizzaName}.`);
+// };
+
+// // Callback for onError
+// const onError = function onOrderError(error) {
+//   console.log(`Error! ${error}`);
+// };
+
+// // Method calls with callbacks
+// pizzaPalace.order('Smoked', makePizza, onOrderError);
+// pizzaPalace.order('Four meats', makePizza, onOrderError);
+// pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace.order('Vienna', makePizza, onOrderError);
+
+// const changeEven = (numbers, value) => {
+//   const evenNumbers = numbers.map(element => {
+//     if (element % 2 === 0) {
+//       element += value;
+//     }
+//     console.log(element);
+//     return element;
+//   });
+//   console.log(numbers);
+//   console.log(evenNumbers);
+// };
+
+function changeEven(numbers, value) {
+  // Change code below this line
+  numbers.forEach(number => {
+    const evenNumbers = [];
+    if (number % 2 === 0) {
+      number += value;
+      evenNumbers.push(number);
+    } else {
+      evenNumbers.push(number);
     }
-    return onOrderError();
-  },
-};
-// Change code above this line
+    console.log(evenNumbers);
+    return evenNumbers;
+  });
+  // Change code above this line
+}
 
-// Callback for onSuccess
-const onSuccess = function makePizza(pizzaName) {
-  console.log(`Your order is accepted. Cooking pizza ${pizzaName}.`);
-};
-
-// Callback for onError
-const onError = function onOrderError(error) {
-  console.log(`Error! ${error}`);
-};
-
-// Method calls with callbacks
-pizzaPalace.order('Smoked', makePizza, onOrderError);
-pizzaPalace.order('Four meats', makePizza, onOrderError);
-pizzaPalace.order('Big Mike', makePizza, onOrderError);
-pizzaPalace.order('Vienna', makePizza, onOrderError);
+changeEven([1, 2, 3, 4, 5], 10);
+// changeEven([44, 13, 81, 92, 36, 54], 100);
