@@ -1,0 +1,2 @@
+const e=[{title:"The Last Kingdom",author:"Bernard Cornwell",genres:["adventure","history"]},{title:"Beside Still Waters",author:"Robert Sheckley",genres:["fiction","mysticism"]},{title:"Redder Than Blood",author:"Tanith Lee",genres:["horror","mysticism","adventure"]}].flatMap((e=>e.genres)),t=e.filter(((e,t,r)=>r.indexOf(e)===t));console.log(e),console.log(t);
+//# sourceMappingURL=index.09affd3a.js.map

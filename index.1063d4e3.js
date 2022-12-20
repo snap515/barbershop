@@ -1,0 +1,2 @@
+!function(){var e=[{title:"The Last Kingdom",author:"Bernard Cornwell",genres:["adventure","history"]},{title:"Beside Still Waters",author:"Robert Sheckley",genres:["fiction","mysticism"]},{title:"Redder Than Blood",author:"Tanith Lee",genres:["horror","mysticism","adventure"]}].flatMap((function(e){return e.genres})),t=e.filter((function(e,t,r){return r.indexOf(e)===t}));console.log(e),console.log(t)}();
+//# sourceMappingURL=index.1063d4e3.js.map
