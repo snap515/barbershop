@@ -463,15 +463,15 @@ const users = [
 // getSortedFriends(users);
 
 //4 модуль 48 из 48
-const getTotalBalanceByGender = (users, gender) => {
-  const filterByGender = users.filter(user => user.gender === gender);
-  console.log(`отфильтровано по ${gender} полу:`, filterByGender);
-  const totalBalance = filterByGender.reduce(
-    (totalBalance, user) => totalBalance + user.balance,
-    0
-  );
-  console.log(`общий баланс у ${gender} = `, totalBalance);
-};
+// const getTotalBalanceByGender = (users, gender) => {
+//   const filterByGender = users.filter(user => user.gender === gender);
+//   console.log(`отфильтровано по ${gender} полу:`, filterByGender);
+//   const totalBalance = filterByGender.reduce(
+//     (totalBalance, user) => totalBalance + user.balance,
+//     0
+//   );
+//   console.log(`общий баланс у ${gender} = `, totalBalance);
+// };
 
-getTotalBalanceByGender(users, 'male');
-getTotalBalanceByGender(users, 'female');
+// getTotalBalanceByGender(users, 'male');
+// getTotalBalanceByGender(users, 'female');
