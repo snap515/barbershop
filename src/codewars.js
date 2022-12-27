@@ -175,17 +175,87 @@
 //0 <= x <= 4
 //0 <= y <= 4
 
-function points(games) {
-  let ourTeam = 0;
-  games.forEach(game => {
-    if (game[0] > game[2]) {
-      ourTeam += 3;
-    } else if (game[0] === game[2]) {
-      ourTeam += 1;
-    }
-  });
-  console.log(ourTeam);
-  return ourTeam;
-}
+// function points(games) {
+//   let ourTeam = 0;
+//   games.forEach(game => {
+//     if (game[0] > game[2]) {
+//       ourTeam += 3;
+//     } else if (game[0] === game[2]) {
+//       ourTeam += 1;
+//     }
+//   });
+//   console.log(ourTeam);
+//   return ourTeam;
+// }
 
-points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']);
+// points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']);
+
+// class Car {
+//   // Change code below this line
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// const Audi = new Car({ brand: 'audi', model: 'q8', price: 123456 });
+
+// console.log(Audi);
+
+// 5 модуль 10 задача
+// class Storage {
+//   constructor(items = {}) {
+//     this.items = items;
+//   }
+//   getItems() {
+//     return this.items;
+//   }
+//   addItem(newItem) {
+//     return this.items.push(newItem);
+//   }
+//   removeItem(itemToRemove) {
+//     this.items.splice(this.items.indexOf(itemToRemove), 1);
+//   }
+// }
+
+// // Change code above this line
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// 5 модуль 11 задача
+
+// class StringBuilder {
+//   constructor(initialValue = {}) {
+//     this.value = initialValue;
+//   }
+//   getValue() {
+//     return this.value;
+//   }
+
+//   padStart(str) {
+//     this.value = str + this.value;
+//   }
+
+//   padEnd(str) {
+//     this.value += str;
+//   }
+//   padBoth(str) {
+//     this.value = str + this.value + str;
+//   }
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // "."
+// builder.padStart('^');
+// console.log(builder.getValue()); // "^."
+// builder.padEnd('^');
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth('=');
+// console.log(builder.getValue()); // "=^.^="
