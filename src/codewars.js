@@ -260,15 +260,53 @@
 // builder.padBoth('=');
 // console.log(builder.getValue()); // "=^.^="
 
-const toJadenCase = function (message) {
-  let words = message.split(' ');
-  let newArray = [];
-  console.log(words);
-  for (let word of words) {
-    newArray.push(word[0].toUpperCase);
-  }
-  console.log(newArray);
-  return newArray;
-};
-let mess = 'hello this is me mario';
-toJadenCase(mess);
+// const toJadenCase = function (message) {
+//   let words = message.split(' ');
+//   let newArray = [];
+//   console.log(words);
+//   for (let word of words) {
+//     newArray.push(word[0].toUpperCase);
+//   }
+//   console.log(newArray);
+//   return newArray;
+// };
+// let mess = 'hello this is me mario';
+// toJadenCase(mess);
+
+// function getLength(arr) {
+//   //return length of arr
+//   console.log(arr.length);
+//   return arr.length;
+// }
+// function getFirst(arr) {
+//   //return the first element of arr
+//   console.log(arr[0]);
+//   return arr[0];
+// }
+// function getLast(arr) {
+//   //return the last element of arr
+//   console.log(arr[arr.length - 1]);
+//   return arr[arr.length - 1];
+// }
+
+// function pushElement(arr) {
+//   const el = 1;
+//   arr.push(el);
+//   console.log(arr);
+//   return arr;
+// }
+// function popElement(arr) {
+//   //pop an element from arr
+//   console.log(arr.pop());
+//   return arr.pop();
+// }
+
+// pushElement([1, 2, 3]);
+
+function animal(obj) {
+  const { name, legs, color } = obj;
+  return `This ${color} ${name} has ${legs} legs.`;
+}
+
+console.log(animal({ name: 'dog', legs: 4, color: 'white' }));
+animal({ name: 'dog', legs: 4, color: 'white' });
