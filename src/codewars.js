@@ -259,3 +259,16 @@
 // console.log(builder.getValue()); // "^.^"
 // builder.padBoth('=');
 // console.log(builder.getValue()); // "=^.^="
+
+const toJadenCase = function (message) {
+  let words = message.split(' ');
+  let newArray = [];
+  console.log(words);
+  for (let word of words) {
+    newArray.push(word[0].toUpperCase);
+  }
+  console.log(newArray);
+  return newArray;
+};
+let mess = 'hello this is me mario';
+toJadenCase(mess);
