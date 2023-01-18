@@ -303,10 +303,10 @@
 
 // pushElement([1, 2, 3]);
 
-function animal(obj) {
-  const { name, legs, color } = obj;
-  return `This ${color} ${name} has ${legs} legs.`;
-}
+// function animal(obj) {
+//   const { name, legs, color } = obj;
+//   return `This ${color} ${name} has ${legs} legs.`;
+// }
 
-console.log(animal({ name: 'dog', legs: 4, color: 'white' }));
-animal({ name: 'dog', legs: 4, color: 'white' });
+// console.log(animal({ name: 'dog', legs: 4, color: 'white' }));
+// animal({ name: 'dog', legs: 4, color: 'white' });
