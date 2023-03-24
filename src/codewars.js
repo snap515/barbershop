@@ -346,18 +346,37 @@
 // Valid smiley face examples: :) :D ;-D :~)
 // Invalid smiley faces: ;( :> :} :]
 
-function countSmileys(arr) {
-  let counter = 0;
-  arr.forEach(element => {
-    if (
-      (element.includes(':') || element.includes(';')) &&
-      (element.includes('D') || element.includes(')'))
-    ) {
-      counter += 1;
-    }
-  });
+// function countSmileys(arr) {
+//   let counter = 0;
+//   arr.forEach(element => {
+//     if (
+//       (element.includes(':') || element.includes(';')) &&
+//       (element.includes('D') || element.includes(')'))
+//     ) {
+//       counter += 1;
+//     }
+//   });
 
-  console.log(counter);
+//   console.log(counter);
+// }
+
+// countSmileys([';)', ':D', ';(', ';D']);
+
+function pickIt(arr) {
+  var odd = [],
+    even = [];
+  //coding here
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] % 2 === 0) {
+      even.push(arr[i]);
+    } else {
+      odd.push(arr[i]);
+    }
+  }
+
+  console.log(even);
+  console.log(odd);
+  return [odd, even];
 }
 
-countSmileys([';)', ':D', ';(', ';D']);
+pickIt([1, 2, 3, 4, 5]);
