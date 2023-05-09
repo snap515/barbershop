@@ -1,0 +1,2 @@
+!function(){function l(l){var t=[],e=!0,o=!1,i=void 0;try{for(var r,a=l[Symbol.iterator]();!(e=(r=a.next()).done);e=!0){var n=r.value;if(t.length>=3)break;"Hello Kitty"!==n&&"Barbie doll"!==n||t.push(n)}}catch(l){o=!0,i=l}finally{try{e||null==a.return||a.return()}finally{if(o)throw i}}return console.log(t),t}l(["Mickey Mouse","Hello Kitty","Barbie doll","Krasavica"]),l(["Mickey Mouse","Barbie doll","Hello Kitty","Hello Kitty","Hello Kitty","Snow white"])}();
+//# sourceMappingURL=index.38dc68c7.js.map
