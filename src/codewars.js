@@ -362,21 +362,47 @@
 
 // countSmileys([';)', ':D', ';(', ';D']);
 
-function pickIt(arr) {
-  var odd = [],
-    even = [];
-  //coding here
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i] % 2 === 0) {
-      even.push(arr[i]);
-    } else {
-      odd.push(arr[i]);
-    }
-  }
+// function pickIt(arr) {
+//   var odd = [],
+//     even = [];
+//   //coding here
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i] % 2 === 0) {
+//       even.push(arr[i]);
+//     } else {
+//       odd.push(arr[i]);
+//     }
+//   }
 
-  console.log(even);
-  console.log(odd);
-  return [odd, even];
+//   console.log(even);
+//   console.log(odd);
+//   return [odd, even];
+// }
+
+// pickIt([1, 2, 3, 4, 5]);
+
+function grabDoll(dolls) {
+  const bag = [];
+  //coding here
+  for (let doll of dolls) {
+    if (bag.length >= 3) {
+      break;
+    }
+    if (doll !== 'Hello Kitty' && doll !== 'Barbie doll') {
+      continue;
+    }
+    bag.push(doll);
+  }
+  console.log(bag);
+  return bag;
 }
 
-pickIt([1, 2, 3, 4, 5]);
+grabDoll(['Mickey Mouse', 'Hello Kitty', 'Barbie doll', 'Krasavica']);
+grabDoll([
+  'Mickey Mouse',
+  'Barbie doll',
+  'Hello Kitty',
+  'Hello Kitty',
+  'Hello Kitty',
+  'Snow white',
+]);
