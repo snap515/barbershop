@@ -381,28 +381,140 @@
 
 // pickIt([1, 2, 3, 4, 5]);
 
-function grabDoll(dolls) {
-  const bag = [];
-  //coding here
-  for (let doll of dolls) {
-    if (bag.length >= 3) {
-      break;
-    }
-    if (doll !== 'Hello Kitty' && doll !== 'Barbie doll') {
-      continue;
-    }
-    bag.push(doll);
+// function grabDoll(dolls) {
+//   const bag = [];
+//   //coding here
+//   for (let doll of dolls) {
+//     if (bag.length >= 3) {
+//       break;
+//     }
+//     if (doll !== 'Hello Kitty' && doll !== 'Barbie doll') {
+//       continue;
+//     }
+//     bag.push(doll);
+//   }
+//   console.log(bag);
+//   return bag;
+// }
+
+// grabDoll(['Mickey Mouse', 'Hello Kitty', 'Barbie doll', 'Krasavica']);
+// grabDoll([
+//   'Mickey Mouse',
+//   'Barbie doll',
+//   'Hello Kitty',
+//   'Hello Kitty',
+//   'Hello Kitty',
+//   'Snow white',
+// ]);
+
+// Callbakc functions
+
+// const productList = [
+//   {
+//     name: 'Banana',
+//     amount: 5,
+//     price: 10,
+//   },
+//   {
+//     name: 'Apple',
+//     amount: 10,
+//     price: 8,
+//   },
+//   {
+//     name: 'Cherry',
+//     amount: 15,
+//     price: 13,
+//   },
+// ];
+
+// function createProduct(obj, callback) {
+//   //1. принимает обЪект и принимает колбек
+//   //2. создание нового объекта и добавление свойства айди
+//   //3. вызов колбек функции с передачей туда созданного объекта
+//   const newObj = { ...obj, id: Date.now() };
+//   callback(newObj);
+// }
+
+// function logProduct(product) {
+//   console.log(product);
+// }
+
+// function logTotalPrice(product) {
+//   console.log(product.amount * product.price);
+// }
+
+// createProduct(productList[2], logProduct);
+// createProduct(productList[2], logTotalPrice);
+
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//   username: 'Alex',
+//   balance: 2000,
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > this.balance) {
+//       onError('На жаль на вашому балансі недостатньо коштів!');
+//     } else if (amount > TRANSACTION_LIMIT) {
+//       onError(
+//         `На жаль ви перевищили ліміт! Поточний ліміт: ${TRANSACTION_LIMIT}`
+//       );
+//     } else {
+//       this.balance -= amount;
+//       onSuccess(`Ви зняли ${amount} грн. Залишок: ${this.balance - amount}`);
+//     }
+//   },
+
+//   deposit(amount, onSuccess, onError) {
+//     if (amount <= 0) {
+//       onError('Сума транзакції повинна бути вище 0!');
+//     } else if (amount > TRANSACTION_LIMIT) {
+//       onError(
+//         `На жаль ви перевищили ліміт! Поточний ліміт: ${TRANSACTION_LIMIT}`
+//       );
+//     } else {
+//       this.balance += amount;
+//       onSuccess(
+//         `Ви поклали на рахунок ${amount} грн, ваш баланс: ${this.balance}грн`
+//       );
+//     }
+//   },
+// };
+
+// function onSuccess(message) {
+//   console.log(`Успішна операція! ${message}`);
+// }
+
+// function onError(message) {
+//   console.log(`Помилка! ${message}`);
+// }
+
+// account.withdraw(5000, onSuccess, onError);
+// account.withdraw(1000, onSuccess, onError);
+// account.deposit(500, onSuccess, onError);
+// account.deposit(1500, onSuccess, onError);
+// account.deposit(-5, onSuccess, onError);
+
+// напишіть функцію each(array, callback), яка першим параметром очікує масив,
+// а другим - функцію, яка застосоється для кожного елемента масиву.
+// Функція each повинна повернути новий масив, елемнатми якого будуть результати виклику коллбека.
+
+function each(array, callback) {
+  //1. Створимо новий масив
+  //2. перебрати масив array за допомогою циклу
+  //3. виклик колбек функції на кожному елементі масиву array
+  //4. додаємо видозмінений елемент у новий масив
+  //5. повернути новий масив
+  const modifiedArr = [];
+  for (const el of array) {
+    modifiedArr.push(callback(el));
   }
-  console.log(bag);
-  return bag;
+  return modifiedArr;
 }
 
-grabDoll(['Mickey Mouse', 'Hello Kitty', 'Barbie doll', 'Krasavica']);
-grabDoll([
-  'Mickey Mouse',
-  'Barbie doll',
-  'Hello Kitty',
-  'Hello Kitty',
-  'Hello Kitty',
-  'Snow white',
-]);
+const arr = [1, 2, 3, 4, 51];
+
+function pow(num) {
+  return num ** 2;
+}
+
+console.log(each(arr, pow));
