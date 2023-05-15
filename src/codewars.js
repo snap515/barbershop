@@ -494,27 +494,139 @@
 // account.deposit(1500, onSuccess, onError);
 // account.deposit(-5, onSuccess, onError);
 
-// напишіть функцію each(array, callback), яка першим параметром очікує масив,
-// а другим - функцію, яка застосоється для кожного елемента масиву.
-// Функція each повинна повернути новий масив, елемнатми якого будуть результати виклику коллбека.
+// *напишіть функцію each(array, callback), яка першим параметром очікує масив,
+// *а другим - функцію, яка застосоється для кожного елемента масиву.
+// *Функція each повинна повернути новий масив, елемнатми якого будуть результати виклику коллбека.
 
-function each(array, callback) {
-  //1. Створимо новий масив
-  //2. перебрати масив array за допомогою циклу
-  //3. виклик колбек функції на кожному елементі масиву array
-  //4. додаємо видозмінений елемент у новий масив
-  //5. повернути новий масив
-  const modifiedArr = [];
-  for (const el of array) {
-    modifiedArr.push(callback(el));
+// function each(array, callback) {
+//   //1. Створимо новий масив
+//   //2. перебрати масив array за допомогою циклу
+//   //3. виклик колбек функції на кожному елементі масиву array
+//   //4. додаємо видозмінений елемент у новий масив
+//   //5. повернути новий масив
+//   const modifiedArr = [];
+//   for (const el of array) {
+//     modifiedArr.push(callback(el));
+//   }
+//   return modifiedArr;
+// }
+
+// const arr = [1, 2, 3, 4, 51];
+
+// function pow(num) {
+//   return num ** 2;
+// }
+
+// function addOne(num) {
+//   return num + 1;
+// }
+// console.log(arr);
+// console.log(each(arr, pow));
+// console.log(each(arr, addOne));
+// console.log(each(arr, num => num / 2));
+
+// const productList = [
+//   {
+//     name: 'Banana',
+//     amount: 5,
+//     price: 10,
+//   },
+//   {
+//     name: 'Apple',
+//     amount: 10,
+//     price: 8,
+//   },
+//   {
+//     name: 'Cherry',
+//     amount: 15,
+//     price: 13,
+//   },
+// ];
+// const createProduct = (obj, callback) => callback({ ...obj, id: Date.now() });
+// const logProduct = product => console.log(product);
+// const onSuccess = message => console.log(`Успішна операція! ${message}`);
+// const onError = message => console.log(`Помилка! ${message}`);
+// const logTotalPrice = product => console.log(product.amount * product.price);
+
+// createProduct(productList[2], logProduct);
+// createProduct(productList[2], logTotalPrice);
+
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//   username: 'Alex',
+//   balance: 2000,
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > this.balance) {
+//       onError('На жаль на вашому балансі недостатньо коштів!');
+//     } else if (amount > TRANSACTION_LIMIT) {
+//       onError(
+//         `На жаль ви перевищили ліміт! Поточний ліміт: ${TRANSACTION_LIMIT}`
+//       );
+//     } else {
+//       this.balance -= amount;
+//       onSuccess(`Ви зняли ${amount} грн. Залишок: ${this.balance - amount}`);
+//     }
+//   },
+
+//   deposit(amount, onSuccess, onError) {
+//     if (amount <= 0) {
+//       onError('Сума транзакції повинна бути вище 0!');
+//     } else if (amount > TRANSACTION_LIMIT) {
+//       onError(
+//         `На жаль ви перевищили ліміт! Поточний ліміт: ${TRANSACTION_LIMIT}`
+//       );
+//     } else {
+//       this.balance += amount;
+//       onSuccess(
+//         `Ви поклали на рахунок ${amount} грн, ваш баланс: ${this.balance}грн`
+//       );
+//     }
+//   },
+// };
+
+// account.withdraw(5000, onSuccess, onError);
+// account.withdraw(1000, onSuccess, onError);
+// account.deposit(500, onSuccess, onError);
+// account.deposit(1500, onSuccess, onError);
+// account.deposit(-5, onSuccess, onError);
+
+// *Exmaple 9 Metod forEach
+// виконайте рефакториг коду за доопомгою методу forEach та стрілочні функції
+
+// function calculateAverage(...args) {
+//   let total = 0;
+//   args.forEach(el => (total += el));
+//   return total / args.length;
+// }
+
+// console.log(calculateAverage(1, 2, 3, 4));
+
+//* Task
+//* The function giveMeFive accepts 1 parameter, obj, which is an object.
+//*
+//* Create an array (which you will eventually return). Then, traverse obj, checking each key and value. If the length of the key is equal to 5, then push the key to your array. Separately, if the length of the value is equal to 5, then push the value to your array.
+//*
+//* At the end, return your array.
+//*
+//* You should //* use for..in in your code, otherwise your solution may not pass this kata.
+
+function giveMeFive(obj) {
+  //coding here
+  const resultArray = [];
+
+  for (let key in obj) {
+    if (key.length === 5) {
+      resultArray.push(key);
+    }
+    if (obj[key].length === 5) {
+      resultArray.push(obj[key]);
+    }
   }
-  return modifiedArr;
+  return resultArray;
 }
 
-const arr = [1, 2, 3, 4, 51];
-
-function pow(num) {
-  return num ** 2;
-}
-
-console.log(each(arr, pow));
+console.log(giveMeFive({ Our: 'earth', is: 'a', beautyful: 'world' }));
+console.log(
+  giveMeFive({ Ihave: 'enough', money: 'to', buy: 'a', car: 'model' })
+);
