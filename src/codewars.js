@@ -611,22 +611,141 @@
 //*
 //* You should //* use for..in in your code, otherwise your solution may not pass this kata.
 
-function giveMeFive(obj) {
-  //coding here
-  const resultArray = [];
+// function giveMeFive(obj) {
+//   //coding here
+//   const resultArray = [];
 
-  for (let key in obj) {
-    if (key.length === 5) {
-      resultArray.push(key);
-    }
-    if (obj[key].length === 5) {
-      resultArray.push(obj[key]);
+//   for (let key in obj) {
+//     if (key.length === 5) {
+//       resultArray.push(key);
+//     }
+//     if (obj[key].length === 5) {
+//       resultArray.push(obj[key]);
+//     }
+//   }
+//   return resultArray;
+// }
+
+// console.log(giveMeFive({ Our: 'earth', is: 'a', beautyful: 'world' }));
+// console.log(
+//   giveMeFive({ Ihave: 'enough', money: 'to', buy: 'a', car: 'model' })
+// );
+//* Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased. The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased and you need to start over for each word.
+
+//* The passed in string will only consist of alphabetical characters and spaces(' '). Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').
+//
+// function toWeirdCase(string) {
+//   let newString = '';
+//   for (let i = 0; i < string.length; i += 1) {
+//     newString[i] = string[i];
+//     // i % 2 === 0
+//     //   ? (newString[i] = string[i].toUpperCase())
+//     //   : (newString[i] = string[i].toLowerCase());
+//   }
+//   return newString;
+// }
+// console.log(toWeirdCase('should'));
+
+//*You get an array of numbers, return the sum of all of the positives ones.
+//*Example [1,-4,7,12] => 1 + 7 + 12 = 20
+//*Note: if there is nothing to sum, the sum is default to 0.
+// function positiveSum(arr) {
+//   const total = arr.reduce((previousValue, number) => {
+//     if (number >= 0) {
+//       return previousValue + number;
+//     } else {
+//       return previousValue;
+//     }
+//   }, 0);
+//   return total;
+// }
+
+// второе решение через тернарный оператор-------------------------------------
+
+// function positiveSum(arr) {
+//   const total = arr.reduce(
+//     (previousValue, number) =>
+//       number >= 0 ? previousValue + number : previousValue,
+//     0
+//   );
+//   return total;
+// }
+
+// console.log(positiveSum([1, 2, 3, 4, 5]));
+// console.log(positiveSum([1, -2, 3, 4, 5]));
+
+//*Write a function which calculates the average of the numbers in a given list.
+
+//*Note: Empty arrays should return 0.
+
+// function findAverage(array) {
+//   // your code here
+//   let sum = 0;
+//   if (array.length === 0) {
+//     return 0;
+//   } else {
+//     sum = array.reduce((acc, num) => {
+//       return acc + num;
+//     }, 0);
+//   }
+//   return sum / array.length;
+// }
+
+//через тернарный оператор
+// function findAverage(array) {
+//   // your code here
+//   let sum = 0;
+//   array.length === 0
+//     ? 0
+//     : (sum = array.reduce((acc, num) => {
+//         return acc + num;
+//       }, 0));
+//   return sum / array.length;
+// }
+
+// console.log(findAverage([1, 1, 1]));
+// console.log(findAverage([1, 2, 3]));
+// console.log(findAverage([]));
+
+//*Task:
+//*Given a list of integers, determine whether the sum of its elements is odd or even.
+
+//*Give your answer as a string matching "odd" or "even".
+
+//*If the input array is empty consider it as: [0] (array with a zero).
+// function oddOrEven(array) {
+//   //enter code here
+//   if (array.length === 0) {
+//     return 'even';
+//   }
+//   const sum = array.reduce((acc, num) => {
+//     return acc + num;
+//   }, 0);
+//   return sum % 2 === 0 ? 'even' : 'odd';
+// }
+// console.log(oddOrEven([1]));
+// console.log(oddOrEven([0]));
+// console.log(oddOrEven([]));
+// console.log(oddOrEven([0, 1, 5]));
+// console.log(oddOrEven([0, 1, 2]));
+
+//* Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+function solution(str, ending) {
+  // TODO: complete
+  const endLength = ending.length;
+  const revStr = str.split('').reverse().join('');
+  const revEnd = ending.split('').reverse().join('');
+  for (let i = 0; i < endLength; i += 1) {
+    if (revStr[i] !== revEnd[i]) {
+      return false;
     }
   }
-  return resultArray;
+  return true;
 }
 
-console.log(giveMeFive({ Our: 'earth', is: 'a', beautyful: 'world' }));
-console.log(
-  giveMeFive({ Ihave: 'enough', money: 'to', buy: 'a', car: 'model' })
-);
+// 2 способ
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+solution('abcde', 'cde');
+solution('abcde', 'abc');
