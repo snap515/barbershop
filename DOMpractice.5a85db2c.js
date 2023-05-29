@@ -1,0 +1,2 @@
+var technologies=["HTML","CSS","Javascript","React","Node"],listEl=document.createElement("ul"),container=document.getElementById("container"),listContent=technologies.map((function(e){return"<li>".concat(e,"</li>")})).join("");listEl.insertAdjacentHTML("beforeEnd",listContent),container.appendChild(listEl),console.log("🚀 ~ file: codewars.js:1752 ~ listEl:",listEl);
+//# sourceMappingURL=DOMpractice.5a85db2c.js.map
