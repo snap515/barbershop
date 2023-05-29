@@ -1617,92 +1617,136 @@
 
 //* CLASS PRACTICE
 
-class User {
-  static counter = 0;
-  static #takenEmails = [];
-  static isEmailTaken(email) {
-    return User.#takenEmails.includes(email);
-  }
-  #name;
-  #email;
-  constructor({ name = '', age = 18, married = false, email = '' } = {}) {
-    User.counter += 1;
-    this.#name = name;
-    this.age = age;
-    this.married = married;
-    this.#email = email;
-    User.#takenEmails.push(email);
-  }
+// class User {
+//   static counter = 0;
+//   static #takenEmails = [];
+//   static isEmailTaken(email) {
+//     return User.#takenEmails.includes(email);
+//   }
+//   #name;
+//   #email;
+//   constructor({ name = '', age = 18, married = false, email = '' } = {}) {
+//     User.counter += 1;
+//     this.#name = name;
+//     this.age = age;
+//     this.married = married;
+//     this.#email = email;
+//     User.#takenEmails.push(email);
+//   }
 
-  get namer() {
-    return this.#name;
-  }
+//   get namer() {
+//     return this.#name;
+//   }
 
-  set namer(newName) {
-    return (this.#name = newName);
-  }
+//   set namer(newName) {
+//     return (this.#name = newName);
+//   }
 
-  get emailer() {
-    return this.#email;
-  }
+//   get emailer() {
+//     return this.#email;
+//   }
 
-  set emailer(newEmail) {
-    return (this.#email = newEmail);
-  }
+//   set emailer(newEmail) {
+//     return (this.#email = newEmail);
+//   }
 
-  nameChanger(newName) {
-    this.#name = newName;
-  }
-}
+//   nameChanger(newName) {
+//     this.#name = newName;
+//   }
+// }
 
-const user1 = new User({
-  name: 'Anton',
-  age: 32,
-  married: true,
-  email: 'antonchegg@gmail.com',
-});
+// const user1 = new User({
+//   name: 'Anton',
+//   age: 32,
+//   married: true,
+//   email: 'antonchegg@gmail.com',
+// });
 
-const enigmatik = {
-  name: 'Danil',
-  age: 33,
-  married: false,
-  email: 'enigmatik@gmail.com',
-};
+// const enigmatik = {
+//   name: 'Danil',
+//   age: 33,
+//   married: false,
+//   email: 'enigmatik@gmail.com',
+// };
 
-console.log(user1.emailer);
-console.log(User.isEmailTaken('123@gmail.com'));
-console.log(User.isEmailTaken('antonchegg@gmail.com'));
+// console.log(user1.emailer);
+// console.log(User.isEmailTaken('123@gmail.com'));
+// console.log(User.isEmailTaken('antonchegg@gmail.com'));
 
-class Gamer extends User {
-  constructor({
-    name = '',
-    age = 18,
-    married = false,
-    email = '',
-    gameTime = 0,
-    win = 0,
-    lose = 0,
-  }) {
-    super({ name, age, married, email });
-    this.gameTime = gameTime;
-    this.win = win;
-    this.lose = lose;
-  }
-}
+// class Gamer extends User {
+//   constructor({
+//     name = '',
+//     age = 18,
+//     married = false,
+//     email = '',
+//     gameTime = 0,
+//     win = 0,
+//     lose = 0,
+//   }) {
+//     super({ name, age, married, email });
+//     this.gameTime = gameTime;
+//     this.win = win;
+//     this.lose = lose;
+//   }
+// }
 
-const userGamer1 = new Gamer({
-  name: 'gamer',
-  married: false,
-  email: 'gamer@gmail.com',
-  gameTime: 10,
-  win: 0,
-  lose: 0,
-});
+// const userGamer1 = new Gamer({
+//   name: 'gamer',
+//   married: false,
+//   email: 'gamer@gmail.com',
+//   gameTime: 10,
+//   win: 0,
+//   lose: 0,
+// });
 
-console.log(userGamer1.nameChanger('hello'));
+// console.log(userGamer1.nameChanger('hello'));
 
-console.log(userGamer1);
+// console.log(userGamer1);
 // console.log(userGamer1.emailer);
 // userGamer1.emailer = 'gamer123@gmail.com';
 
 // console.log(userGamer1.emailer);
+
+//* DOM, навигация по DOM, объектная модель документа
+
+//example 1
+//Сделать список технологий, который учатся на курсе фулстак с помощью JS.
+
+const technologies = ['HTML', 'CSS', 'Javascript', 'React', 'Node'];
+//показать как это делается через map и reduce
+// решение
+/*
+1. создание списка ul
+2. создание цикла для перебора массива
+3. создание li
+4. записать текст с массива в елемент li
+5. поместить элементы li в элементы ul
+6. поместить ul на страницу
+*/
+
+// //1 спсособ, самый не оптимальный
+// const container = document.getElementById('container');
+
+// console.log(container);
+
+// const listEl = document.createElement('ul');
+
+// for (let technology of technologies) {
+//   const elementEL = document.createElement('li');
+//   elementEL.textContent = technology;
+//   listEl.appendChild(elementEL);
+// }
+
+// container.appendChild(listEl);
+
+//2 способ через map
+const listEl = document.createElement('ul');
+const container = document.getElementById('container');
+
+const listContent = technologies
+  .map(technology => `<li>${technology}</li>`)
+  .join('');
+
+listEl.insertAdjacentHTML('beforeEnd', listContent);
+container.appendChild(listEl);
+console.log('🚀 ~ file: codewars.js:1752 ~ listEl:', listEl);
