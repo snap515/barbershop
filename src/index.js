@@ -475,3 +475,95 @@ const users = [
 
 // getTotalBalanceByGender(users, 'male');
 // getTotalBalanceByGender(users, 'female');
+
+// const peopleList = [
+//   {
+//     name: 'Anton',
+//     surName: 'Pedan',
+//     age: 32,
+//     location: {
+//       country: 'Germany',
+//       city: 'Bad Oeynhausen',
+//       originCountry: 'Ukraine',
+//       originCity: 'Sieverodonetsk',
+//     },
+//     birthday: '01.12.1990',
+//     finishedUnviversity: true,
+//     height: 185,
+//     weight: 93,
+//     nameChanger(newName) {
+//       this.name = newName;
+//     },
+//   },
+
+//   {
+//     name: 'Olena',
+//     surName: 'Pedan',
+//     age: 27,
+//     location: {
+//       country: 'Germany',
+//       city: 'Bad Oeynhausen',
+//       originCountry: 'Ukraine',
+//       originCity: 'Sieverodonetsk',
+//     },
+//     birthday: '06.09.1995',
+//     finishedUnviversity: true,
+//     height: 161,
+//     weight: 63,
+//   },
+
+//   {
+//     name: 'Danil',
+//     surName: 'Lysak',
+//     age: 33,
+//     location: {
+//       country: 'Ukraine',
+//       city: 'Nikopol',
+//       originCountry: 'Ukraine',
+//       originCity: 'Sieverodonetsk',
+//     },
+//     birthday: '13.04.1990',
+//     finishedUnviversity: true,
+//     height: 165,
+//     weight: 70,
+//   },
+// ];
+
+// const person1 = {
+//   name: 'Anton',
+//   surName: 'Pedan',
+//   age: 32,
+//   location: {
+//     country: 'Germany',
+//     city: 'Bad Oeynhausen',
+//     originCountry: 'Ukraine',
+//     originCity: 'Sieverodonetsk',
+//   },
+//   birthday: '01.12.1990',
+//   finishedUnviversity: true,
+//   height: 185,
+//   weight: 93,
+//   nameChanger(newName) {
+//     this.name = newName;
+//   },
+// };
+
+// const person2 = {
+//   name: 'Olena',
+//   surName: 'Pedan',
+//   age: 27,
+//   location: {
+//     country: 'Germany',
+//     city: 'Bad Oeynhausen',
+//     originCountry: 'Ukraine',
+//     originCity: 'Sieverodonetsk',
+//   },
+//   birthday: '06.09.1995',
+//   finishedUnviversity: true,
+//   height: 161,
+//   weight: 63,
+// };
+
+// person1.nameChanger('snap');
+// // person2.nameChanger('Helena');
+// console.log(person1);
