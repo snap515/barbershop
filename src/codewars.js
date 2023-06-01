@@ -1762,24 +1762,24 @@
 //*example2
 //сделать несколько кнопок на основе массива с объектами используя createElement
 
-const colors = [
-  {
-    label: 'red',
-    color: '#FF0000',
-  },
-  {
-    label: 'green',
-    color: '#00FF00',
-  },
-  {
-    label: 'blue',
-    color: '#0000FF',
-  },
-  {
-    label: 'yellow',
-    color: '#FFFF00',
-  },
-];
+// const colors = [
+//   {
+//     label: 'red',
+//     color: '#FF0000',
+//   },
+//   {
+//     label: 'green',
+//     color: '#00FF00',
+//   },
+//   {
+//     label: 'blue',
+//     color: '#0000FF',
+//   },
+//   {
+//     label: 'yellow',
+//     color: '#FFFF00',
+//   },
+// ];
 
 /*1.перебрать массив colors
   2.создать кнопку
@@ -1805,3 +1805,91 @@ const colors = [
 // }, '');
 
 // container.insertAdjacentHTML('beforeend', contentList);
+
+const cars = [
+  {
+    id: 1,
+    car: 'honda',
+    type: 'civic',
+    price: 12000,
+    img: 'https://images.prismic.io/carwow/3149ba8c-1b2d-4748-a395-271995aeb87f_LHD+Honda+Civic+eHEV+2022+exterior+%288%29.jpg?fit=clip&q=60&w=750&cs=tinysrgb&auto=format',
+  },
+  {
+    id: 2,
+    car: 'audi',
+    type: 'q7',
+    price: 40000,
+    img: 'https://images.prismic.io/carwow/356d8b13-a35f-4e3d-99cf-5911edc63a39_LHD+Audi+Q7+2021+exterior+%2812%29.jpg?fit=clip&q=60&w=750&cs=tinysrgb&auto=format',
+  },
+  {
+    id: 33,
+    car: 'bmw',
+    type: '5 series',
+    price: 9000,
+    img: 'https://www.bmw.de/content/dam/bmw/common/all-models/5-series/sedan/2023/5-series-sedan-silver.png/jcr:content/renditions/cq5dam.resized.img.585.low.time1684927323013.png',
+  },
+  {
+    id: 3,
+    car: 'honda',
+    type: 'accord',
+    price: 20000,
+    number: '+3800000000',
+    img: 'https://springerfachmedien.azureedge.net/sfm-trucker/thumb_750x422/media/5172/Honda-Accord.14556058.jpg',
+  },
+];
+
+//* Example3
+// // вывести на экран список изображений каждой машины по типу ul>li>img
+// const containerEl = document.querySelector('#container');
+// const listEl = document.createElement('ul');
+// const carPhotos = cars.map(car => `<li><img src=${car.img}></li>`).join('');
+// // console.log(carPhotos);
+// listEl.insertAdjacentHTML('afterbegin', carPhotos);
+// console.log(listEl);
+// containerEl.appendChild(listEl);
+
+//* Example4
+// //сделать фильтр автомобилей с помощью формы(инпута, селекта, и кнопки)  по марке и модели авто.
+// const listEl = document.querySelector('.js-list');
+// const formEl = document.querySelector('.js-search-form');
+// console.log(formEl);
+// formEl.addEventListener('submit', onSearch);
+
+// function makeMarkup(arr) {
+//   return arr
+//     .map(
+//       ({ id, car, type, price, img }) => `<li data-id="${id}">
+//           <img src="${img}" alt="${car}" width ="640"/>
+//           <h2>${car}</h2>
+//           <h3>${type}</h3>
+//           <p>${price}</p>
+//         </li>`
+//     )
+//     .join('');
+// }
+
+// listEl.insertAdjacentHTML('beforeend', makeMarkup(cars));
+
+// function onSearch(evt) {
+//   evt.preventDefault();
+//   const form = evt.currentTarget;
+//   console.dir(form);
+//   const { query, select } = form.elements;
+//   // console.log('query.value:', query.value);
+//   // console.dir('select.value: ', select.value);
+//   const searchCars = cars.filter(
+//     item =>
+//       item[select.value].toLowerCase() === query.value.trim().toLowerCase()
+//   );
+//   listEl.innerHTML = makeMarkup(searchCars);
+//   console.log(searchCars);
+// }
+
+//*Example5
+//Написать код, для открытия модального окна с оверлеем.
+/*
+
+*/
+
+const modalWindow = document.querySelector('#modalWindow');
+console.log(modalWindow);

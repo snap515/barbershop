@@ -26,3 +26,27 @@
   background-size: cover;
   background-position: center;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: sans-serif;
+  height: 100vh;
+  padding-top: 50px;
+  position: relative;
+}
+.open-modal-btn {
+  background-color: black;
+  color: lime;
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 40px;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  margin: 0 auto;
+}
