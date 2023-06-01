@@ -1709,10 +1709,10 @@
 
 //* DOM, навигация по DOM, объектная модель документа
 
-//example 1
+//*example 1
 //Сделать список технологий, который учатся на курсе фулстак с помощью JS.
 
-const technologies = ['HTML', 'CSS', 'Javascript', 'React', 'Node'];
+// const technologies = ['HTML', 'CSS', 'Javascript', 'React', 'Node'];
 //показать как это делается через map и reduce
 // решение
 /*
@@ -1739,14 +1739,69 @@ const technologies = ['HTML', 'CSS', 'Javascript', 'React', 'Node'];
 
 // container.appendChild(listEl);
 
-//2 способ через map
-const listEl = document.createElement('ul');
-const container = document.getElementById('container');
+// //2 способ через map
+// const listEl = document.createElement('ul');
+// const container = document.getElementById('container');
 
-const listContent = technologies
-  .map(technology => `<li>${technology}</li>`)
-  .join('');
+// const listContent = technologies
+//   .map(technology => `<li>${technology}</li>`)
+//   .join('');
 
-listEl.insertAdjacentHTML('beforeEnd', listContent);
-container.appendChild(listEl);
-console.log('🚀 ~ file: codewars.js:1752 ~ listEl:', listEl);
+// listEl.insertAdjacentHTML('beforeEnd', listContent);
+// container.appendChild(listEl);
+
+// //3 способ через reduce
+// const container = document.getElementById('container');
+// const listContent = technologies.reduce(
+//   (acc, technology) => (acc += `<li>${technology}</li>`),
+//   ''
+// );
+
+// container.insertAdjacentHTML('beforeend', `<ul>${listContent}</ul>`);
+
+//*example2
+//сделать несколько кнопок на основе массива с объектами используя createElement
+
+const colors = [
+  {
+    label: 'red',
+    color: '#FF0000',
+  },
+  {
+    label: 'green',
+    color: '#00FF00',
+  },
+  {
+    label: 'blue',
+    color: '#0000FF',
+  },
+  {
+    label: 'yellow',
+    color: '#FFFF00',
+  },
+];
+
+/*1.перебрать массив colors
+  2.создать кнопку
+  3. добавить кнопке текст и цвет кнопки
+  4. добавить кнопки на страницу
+*/
+
+// //1 способ через appendChild
+// const container = document.getElementById('container');
+
+// colors.forEach(({ label, color }) => {
+//   const buttonEL = document.createElement('button');
+//   buttonEL.textContent = label;
+//   buttonEL.style.backgroundColor = color;
+//   container.appendChild(buttonEL);
+// });
+
+//2 способ через insertAdjacentHTML
+
+// const container = document.getElementById('container');
+// const contentList = colors.reduce((acc, { label, color }) => {
+//   return (acc += `<button style="background-color: ${color}">${label}</button>`);
+// }, '');
+
+// container.insertAdjacentHTML('beforeend', contentList);
