@@ -1891,5 +1891,12 @@ const cars = [
 
 */
 
-const modalWindow = document.querySelector('#modalWindow');
-console.log(modalWindow);
+// const modalWindow = document.querySelector('#modalWindow');
+// console.log(modalWindow);
+
+function find_mult_3(num) {
+  const arr = Array.from(String(num), Number);
+  console.log(arr);
+}
+
+find_mult_3(362);
