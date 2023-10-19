@@ -1894,9 +1894,117 @@ const cars = [
 // const modalWindow = document.querySelector('#modalWindow');
 // console.log(modalWindow);
 
-function find_mult_3(num) {
-  const arr = Array.from(String(num), Number);
-  console.log(arr);
+// function find_mult_3(num) {
+//   const arr = Array.from(String(num), Number);
+//   console.log(arr);
+// }
+
+// find_mult_3(362);
+
+// function ipsBetween(start, end) {
+//   const firstNum = 16777216;
+//   const secondNum = 65536;
+//   const thirdNum = 256;
+//   const firstIp = start.split('.').map(elem => elem * 1);
+//   const secondIp = end.split('.').map(elem => elem * 1);
+//   console.log(firstIp);
+//   console.log(secondIp);
+
+//   console.log(
+//     ipCounter(secondIp, firstNum, secondNum, thirdNum) -
+//       ipCounter(firstIp, firstNum, secondNum, thirdNum)
+//   );
+
+//   return (
+//     ipCounter(secondIp, firstNum, secondNum, thirdNum) -
+//     ipCounter(firstIp, firstNum, secondNum, thirdNum)
+//   );
+// }
+
+// function ipsBetween(start, end) {
+//   const firstIpArr = start.split('.').map(elem => elem * 1);
+//   const secondIpArr = end.split('.').map(elem => elem * 1);
+
+//   return (
+//     (secondIpArr[0] - firstIpArr[0]) * 16777216 +
+//     (secondIpArr[1] - firstIpArr[1]) * 65536 +
+//     (secondIpArr[2] - firstIpArr[2]) * 256 +
+//     secondIpArr[3] -
+//     firstIpArr[3]
+//   );
+// // }
+
+// function ipsBetween(start, end) {
+//   return ipConventer(end) - ipConventer(start);
+// }
+
+// function ipConventer(ip) {
+//   return ip
+//     .split('.')
+//     .map(elem => elem * 1)
+//     .reduce((acc, elem, index) => {
+//       console.log(index);
+//       if (index === 0) {
+//         return acc + elem * 16777216;
+//       } else if (index === 1) {
+//         console.log(index);
+//         return acc + elem * 65536;
+//       } else if (index === 2) {
+//         console.log(index);
+//         return acc + elem * 256;
+//       } else if (index === 3) {
+//         console.log(index);
+//         return acc + elem;
+//       }
+//     }, 0);
+// }
+// ipsBetween('150.0.0.0', '150.0.0.1');
+
+//! Write a function that rotates a two-dimensional array (a matrix) either clockwise or anti-clockwise by 90 degrees, and returns the rotated array.
+
+// The function accepts two parameters: a matrix, and a string specifying the direction or rotation. The direction will be either "clockwise" or "counter-clockwise".
+
+// Examples
+// For matrix:
+
+// [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ]
+// Clockwise rotation:
+
+// [
+//   [7, 4, 1],
+//   [8, 5, 2],
+//   [9, 6, 3]
+// ]
+// Counter-clockwise rotation:
+
+// [
+//   [3, 6, 9],
+//   [2, 5, 8],
+//   [1, 4, 7]
+// ]
+
+function rotate(matrix, direction) {
+  if (direction === 'counter-clockwise') {
+    matrix.map;
+  } else if (direction === 'clockwise') {
+    let flat = matrix.flat();
+    const rotated = flat.map((elem, index, arr) => {
+      console.log(elem, index, arr);
+      elem = arr[index + 2];
+    });
+    console.log(flat);
+    console.log(rotated);
+  }
 }
 
-find_mult_3(362);
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+rotate(matrix, 'clockwise');
