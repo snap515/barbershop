@@ -1960,51 +1960,20 @@ const cars = [
 // }
 // ipsBetween('150.0.0.0', '150.0.0.1');
 
-//! Write a function that rotates a two-dimensional array (a matrix) either clockwise or anti-clockwise by 90 degrees, and returns the rotated array.
+//! The word i18n is a common abbreviation of internationalization in the developer community, used instead of typing the whole word and trying to spell it correctly. Similarly, a11y is an abbreviation of accessibility.
 
-// The function accepts two parameters: a matrix, and a string specifying the direction or rotation. The direction will be either "clockwise" or "counter-clockwise".
+//! Write a function that takes a string and turns any and all "words" (see below) within that string of length 4 or greater into an abbreviation, following these rules:
 
-// Examples
-// For matrix:
-
-// [
-//   [1, 2, 3],
-//   [4, 5, 6],
-//   [7, 8, 9]
-// ]
-// Clockwise rotation:
-
-// [
-//   [7, 4, 1],
-//   [8, 5, 2],
-//   [9, 6, 3]
-// ]
-// Counter-clockwise rotation:
-
-// [
-//   [3, 6, 9],
-//   [2, 5, 8],
-//   [1, 4, 7]
-// ]
-
-function rotate(matrix, direction) {
-  if (direction === 'counter-clockwise') {
-    matrix.map;
-  } else if (direction === 'clockwise') {
-    let flat = matrix.flat();
-    const rotated = flat.map((elem, index, arr) => {
-      console.log(elem, index, arr);
-      elem = arr[index + 2];
-    });
-    console.log(flat);
-    console.log(rotated);
-  }
+//! A "word" is a sequence of alphabetical characters. By this definition, any other character like a space or hyphen (eg. "elephant-ride") will split up a series of letters into two words (eg. "elephant" and "ride").
+//! The abbreviated version of the word should have the first letter, then the number of removed characters, then the last letter (eg. "elephant ride" => "e6t r2e").
+function abbreviate(string) {
+  return string.replace(/\b\w{4,}\b/g, match => {
+    console.log(match);
+    const firstLetter = match[0];
+    const lastLetter = match[match.length - 1];
+    const removedCharacters = match.length - 2;
+    return `${firstLetter}${removedCharacters}${lastLetter}`;
+  });
 }
 
-let matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
-
-rotate(matrix, 'clockwise');
+abbreviate('You need, need not want, to complete this code-wars mission');
